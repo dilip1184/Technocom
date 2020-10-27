@@ -620,3 +620,81 @@ Class: TechnocomShared.Logging.LogWriter
 Method: Exception
 
 ----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 10:13:09 PM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:25237/UI/DashBoard
+Error Message:DataBinding: 'TechnocomShared.Entities.MenuEntity' does not contain a property with the name 'HiddenScreenId'.
+Stack Trace:   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at System.Web.UI.TemplateControl.Eval(String expression)
+   at ASP.ui_shared_default_master.__DataBind__control27(Object sender, EventArgs e) in e:\ZKProject\Technocom\TechnocomWeb\UI\Shared\default.Master:line 111
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.Repeater.AddDataItemsIntoItemsArray(IEnumerable dataSource, Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.PostGetDataAction(IEnumerable dataSource)
+   at System.Web.UI.WebControls.Repeater.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.Repeater.DataBind()
+   at TechnocomWeb.UI.Shared._default.GetMenu() in E:\ZKProject\Technocom\TechnocomWeb\UI\Shared\default.Master.cs:line 40
+   at TechnocomWeb.UI.Shared._default.Page_Load(Object sender, EventArgs e) in E:\ZKProject\Technocom\TechnocomWeb\UI\Shared\default.Master.cs:line 30
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 10:17:52 PM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:25237/UI/DashBoard
+Error Message:Object reference not set to an instance of an object.
+Stack Trace:   at ASP.ui_shared_default_master.__DataBind__control27(Object sender, EventArgs e) in e:\ZKProject\Technocom\TechnocomWeb\UI\Shared\default.Master:line 111
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.Repeater.AddDataItemsIntoItemsArray(IEnumerable dataSource, Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.PostGetDataAction(IEnumerable dataSource)
+   at System.Web.UI.WebControls.Repeater.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.Repeater.DataBind()
+   at TechnocomWeb.UI.Shared._default.GetMenu() in E:\ZKProject\Technocom\TechnocomWeb\UI\Shared\default.Master.cs:line 40
+   at TechnocomWeb.UI.Shared._default.Page_Load(Object sender, EventArgs e) in E:\ZKProject\Technocom\TechnocomWeb\UI\Shared\default.Master.cs:line 30
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------

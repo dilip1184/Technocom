@@ -108,7 +108,9 @@
                             <ul class="sidebar-menu">
                                 <asp:Repeater ID="RepeaterMenu" runat="server" OnItemDataBound="RepeaterMenu_ItemDataBound" OnItemCommand="RepeaterMenu_ItemCommand">
                                     <ItemTemplate>
-                                        <li class="treeview">
+                                        <li class="treeview <%# Convert.ToInt32(Session["Scr"] ?? 1).ToString()== Eval("NavigationId").ToString() 
+                                                || ((List<TechnocomShared.Entities.MenuEntity>)ViewState["MenuList"]).Where(x=>x.NavigationId==Convert.ToInt32(Session["Scr"] ?? 1)).Select(x=>x.ParentId).FirstOrDefault().ToString()==Eval("NavigationId").ToString()? "active": ""%>"
+                                            id="menu-<%# Eval("NavigationId")%>">
                                             <asp:Label ID="lblNavigationId" runat="server" Visible="false" Text='<%# Eval("NavigationId")%>' />
                                             <asp:Label ID="lblMenuURL" runat="server" Visible="false" Text='<%# Eval("URLPath")%>' />
                                             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="nav-link nav-toggle">
@@ -116,8 +118,8 @@
 
                                             <asp:Repeater ID="RepeaterSubMenu" runat="server" OnItemCommand="RepeaterSubMenu_ItemCommand">
                                                 <ItemTemplate>
-                                                    <ul class="treeview-menu">
-                                                        <li class="treeview">
+                                                    <ul class="treeview-menu " >
+                                                        <li class="treeview <%# Convert.ToInt32(Session["Scr"] ?? 1).ToString()== Eval("NavigationId").ToString()? "active": ""%>" id="sub-menu-<%# Eval("NavigationId")%>">
                                                             <asp:Label ID="lblSubMenuURL" runat="server" Visible="false" Text='<%# Eval("URLPath")%>' />
                                                             <asp:LinkButton ID="LinkButton2" runat="server" CssClass="nav-link nav-toggle">
                                                             <i class='<%# Eval("IconClass")%>'></i><span class="title" runat="server"><%# Eval("MenuName")%></span></asp:LinkButton>
