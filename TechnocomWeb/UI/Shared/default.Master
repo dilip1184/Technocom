@@ -1,0 +1,229 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="default.master.cs" Inherits="TechnocomWeb.UI.Shared._default" %>
+
+<%@ Register Assembly="TechnocomControl" Namespace="TechnocomControl" TagPrefix="Technocomctrl" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="DownloadOptions" content="noopen" />
+    <title>Technocom Attendance</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css" />
+    <script src="https://use.fontawesome.com/be189ee289.js"></script>
+
+
+    <link href="../../Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../Content/css/toastr.css" rel="stylesheet" />
+    <link href="../../Content/css/ap-scroll-top.css" rel="stylesheet" />
+    <link href="../../Content/css/metisMenu.css" rel="stylesheet" />
+    <link href="../../Content/css/style.css" rel="stylesheet" />
+    <link href="../../Content/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="../../Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/css/_all-skins.min.css" rel="stylesheet" />
+    <link href="../../Content/css/skin-black.min.css" rel="stylesheet" />
+    <link href="../../Content/css/generic-class.css" rel="stylesheet" />
+
+    <script src="../../JS/jquery.js"></script>
+    <script src="../../JS/jquery-ui.js"></script>
+    <script src="../../JS/jquery-1.10.2.min.js"></script>
+    <script src="../../JS/jquery.validate.min.js"></script>
+    <script src="../../JS/jquery.validate.unobtrusive.min.js"></script>
+    <script src="../../JS/bootstrap.min.js"></script>
+    <script src="../../JS/toastr.js"></script>
+    <script src="../../JS/ap-scroll-top.min.js"></script>
+    <script src="../../JS/js/app.min.js"></script>
+    <script src="../../JS/shared.js"></script>
+    <script src="../../JS/metisMenu.js"></script>
+
+    <link rel="icon" href="../../favicon.ico" />
+</head>
+<body class="skin-black sidebar-mini">
+    <form id="frmMasterPage" runat="server">
+        <ajax:ToolkitScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"
+            ScriptMode="Release" CombineScripts="true" AsyncPostBackTimeout="0">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/CommonFunctions.js" />
+            </Scripts>
+        </ajax:ToolkitScriptManager>
+        <script type="text/javascript">
+
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequest);
+            var ModalProgress = '<%= mpeSearching.ClientID %>';
+            function beginRequest(sender, args) {
+                if (sender._postBackSettings.sourceElement.id.indexOf("btnExport") == -1
+                    && sender._postBackSettings.sourceElement.id.indexOf("ActiveUser") == -1
+                    )
+                    $find(ModalProgress).show();
+            }
+
+            function endRequest(sender, args) {
+                $find(ModalProgress).hide();
+            }
+        </script>
+
+        <div id="wrapper">
+            <header class="main-header">
+                <a href="#" class="logo">
+                    <span class="logo-mini"><b style="color: #d30707;">S</b>S</span>
+                    <span class="logo-lg">
+                        <b>Technocom</b>
+                    </span>
+                </a>
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown user user-menu" style="padding-top: 2px;">
+                                <a href="#" class="dropdown-toggle" style="cursor: text;">
+                                    <span style="color: black; font-size: 9pt; font-weight: 600;">Working Date: 25/Oct/2020</span>
+
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="../../Content/Images/defaultprofile.png" class="user-image" />
+                                   
+                                    <span class="hidden-xs">admin</span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="drop2">
+                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a></li>
+                                    <li role="separator" class="divider no-margin"></li>
+                                    <li><a href="../../LoginPage.aspx"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <asp:UpdatePanel ID="HeaderPanel" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <aside class="main-sidebar">
+                        <section class="sidebar">
+                            <ul class="sidebar-menu">
+                                <asp:Repeater ID="RepeaterMenu" runat="server" OnItemDataBound="RepeaterMenu_ItemDataBound" OnItemCommand="RepeaterMenu_ItemCommand">
+                                    <ItemTemplate>
+                                        <li class="treeview">
+                                            <asp:Label ID="lblNavigationId" runat="server" Visible="false" Text='<%# Eval("NavigationId")%>' />
+                                            <asp:Label ID="lblMenuURL" runat="server" Visible="false" Text='<%# Eval("URLPath")%>' />
+                                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="nav-link nav-toggle">
+                                                 <i class='<%# Eval("IconClass")%>'></i><span class="title" runat="server"><%# Eval("MenuName")%></span></asp:LinkButton>
+
+                                            <asp:Repeater ID="RepeaterSubMenu" runat="server" OnItemCommand="RepeaterSubMenu_ItemCommand">
+                                                <ItemTemplate>
+                                                    <ul class="treeview-menu">
+                                                        <li class="treeview">
+                                                            <asp:Label ID="lblSubMenuURL" runat="server" Visible="false" Text='<%# Eval("URLPath")%>' />
+                                                            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="nav-link nav-toggle">
+                                                            <i class='<%# Eval("IconClass")%>'></i><span class="title" runat="server"><%# Eval("MenuName")%></span></asp:LinkButton>
+                                                        </li>
+                                                    </ul>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </ul>
+                        </section>
+                    </aside>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <!-- Navigation -->
+            <!-- Page Content -->
+            <div class="content-wrapper">
+                <section class="content">
+                    <div class="page-title">
+                        <ul class="page-breadcrumb breadcrumb">
+                            <Technocomctrl:ctlBreadCrumb runat="server" ID="breadcrumb1" />
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-content">
+                                <asp:UpdatePanel ID="upnlMain" runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <div class="note note-success p-t-10 p-b-10" id="DivAlertMessage" runat="server" visible="false">
+                                            <h4 class="block p-0 f-w-600 f-16">Alert !</h4>
+                                            <p>
+                                                <asp:Label ID="lblMessage" runat="server" />
+                                                <asp:Label ID="lblScreenName" runat="server" Visible="false" />
+                                            </p>
+                                        </div>
+                                        <div class="page-content-inner">
+                                            <div class="mt-content-body" style="min-height: 450px;">
+                                                <asp:ContentPlaceHolder ID="placeHolderBody1" runat="server">
+                                                </asp:ContentPlaceHolder>
+                                            </div>
+                                        </div>
+                                        <asp:Button ID="btnDummy" runat="server" Text="" Style="display: none" />
+                                        <asp:Button ID="ok" runat="server" Text="OK" Style="display: none" />
+                                        <asp:Button ID="cancel" runat="server" Text="Cancel" Style="display: none" />
+                                        <ajax:ModalPopupExtender ID="messasgePopup" runat="server" OkControlID="ok" TargetControlID="btnDummy"
+                                            CancelControlID="cancel" PopupControlID="pnlMessagePopup" RepositionMode="RepositionOnWindowResizeAndScroll"
+                                            BackgroundCssClass="modalBackground" />
+
+                                        <asp:Panel ID="pnlMessagePopup" runat="server" CssClass="confirm-dialog" Style="display: block;">
+                                            <asp:Panel ID="pnlPop1" runat="server" Style="background-color: #fff;" CssClass="popBorder-msg">
+                                                <br />
+                                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                                    <ContentTemplate>
+                                                        <h5 style="text-align: left;">
+                                                            <asp:Label ID="lblPopupMessage" Font-Bold="true" runat="server" CssClass="black-text-MessageBox " /></h5>
+                                                        <br />
+                                                        <br />
+                                                        <asp:Panel ID="pnlOK" runat="server" Visible="false" CssClass="base">
+                                                            <asp:Button ID="btnOk" CssClass="standardButton-login" runat="server"
+                                                                OnClick="btnOk_Click" Text="OK" />
+                                                        </asp:Panel>
+                                                        <asp:Panel ID="pnlYesNo" runat="server" Visible="false" HorizontalAlign="Center" CssClass="base">
+                                                            <asp:Button ID="btnYes" CssClass="btn btn-sm btn-primary" runat="server"
+                                                                OnClick="btnYes_Click" Text="Yes" />
+                                                            <asp:Button ID="btnNo" CssClass="btn btn-sm red-mint" runat="server"
+                                                                OnClick="btnNo_Click" Text="No" />
+                                                        </asp:Panel>
+                                                        <a onclick="$find('messasgePopup').hide(); return false;" class="close btn-close-custome" href="#"></a>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                            </asp:Panel>
+                                        </asp:Panel>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                                <asp:Panel ID="pnlMasterPopup" runat="server" Style="display: block;">
+                                    <asp:Panel ID="pnlPop" runat="server" CssClass="popBorder" Style="background-color: White;"
+                                        Height="600px">
+                                        <asp:UpdatePanel ID="upnlMasterPopup" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
+                                            <ContentTemplate>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </asp:Panel>
+                                </asp:Panel>
+                                <asp:Button ID="btnDummy1" runat="server" Text="" Style="display: none" />
+                                <asp:Button ID="ok1" runat="server" Text="OK" Style="display: none" />
+                                <asp:Button ID="cancel1" runat="server" Text="Cancel" Style="display: none" />
+                                <ajax:ModalPopupExtender ID="MasterPopup" runat="server" OkControlID="ok1" TargetControlID="btnDummy1"
+                                    CancelControlID="cancel1" PopupControlID="pnlMasterPopup" RepositionMode="RepositionOnWindowResizeAndScroll"
+                                    BackgroundCssClass="modalBackground" />
+                            </div>
+                        </div>
+                    </div>
+                    <ajax:ModalPopupExtender ID="mpeSearching" runat="server" TargetControlID="panSearching"
+                        PopupControlID="panSearching" BackgroundCssClass="progressBackground" DropShadow="false"
+                        RepositionMode="RepositionOnWindowScroll" />
+                    <asp:Panel runat="server" ID="panSearching" Style="display: none;" CssClass="loading-overlay">
+                        <asp:Image runat="server" ID="imgProgress" ImageUrl="../../Content/images/block-loading.gif" />
+                    </asp:Panel>
+                </section>              
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+
+        <div class="divmaskmodel" id="divmask"></div>
+    </form>
+</body>
+</html>

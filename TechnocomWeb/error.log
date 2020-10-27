@@ -1,0 +1,622 @@
+----------------------------------------
+Timestamp: 10/17/2020 05:02:28 PM
+
+Category: Exception
+
+Message: Message:Error executing:SELECT * FROM [dbo].[UserViewList] WHERE LoginId ='test'
+ Inner Message:Invalid object name 'Shift'.
+Could not use view or function 'dbo.UserViewList' because of binding errors.
+ Inner Stack:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteReader(DbCommand command, CommandBehavior cmdBehavior)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   at SECURITASShared.DataAccess.DataConnection.ExecuteReaderSQLQuery(String SQLQuery) in f:\Personal\SECURITAS\SECURITASShared\DataAccess\DataConnection.cs:line 177
+   at SECURITASShared.EntityLoader.EntityBase.FillCollectionBySQLQuery[T](String SQLQuery) in f:\Personal\SECURITAS\SECURITASShared\EntityLoader\EntityBase.cs:line 262
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/17/2020 06:49:56 PM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/17/2020 06:50:00 PM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/RegionList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/17/2020 06:50:49 PM
+
+Category: Exception
+
+Message: Message:Stored Procedure :RegionManage 
+Parameters :36
+ Inner Message:Invalid object name 'Town'.
+ Inner Stack:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteReader(DbCommand command, CommandBehavior cmdBehavior)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   at SECURITASShared.DataAccess.DataConnection.ExecuteReader(String storedProdeureName, Object[] parametrValues) in f:\Personal\SECURITAS\SECURITASShared\DataAccess\DataConnection.cs:line 168
+   at SECURITASShared.EntityLoader.EntityBase.FillObject[T](String storedProdeureName, Object[] parametrValues) in f:\Personal\SECURITAS\SECURITASShared\EntityLoader\EntityBase.cs:line 225
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/17/2020 06:52:01 PM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/17/2020 06:52:06 PM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/RegionList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:04:22 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:04:29 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/BranchList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:05:47 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:05:50 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/BranchList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:07:44 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:07:47 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/BranchList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:08:38 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:08:43 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/BranchList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:14:19 AM
+
+Category: Exception
+
+Message: Message:Please select Region.<br/>
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:37:56 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:38:00 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/HubList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:41:38 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:41:42 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/SiteList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:45:31 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:45:36 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/Configuration/BranchList
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 11:46:24 AM
+
+Category: Exception
+
+Message: Message:Please select Zone.<br/>
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 02:29:47 PM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/18/2020 02:29:52 PM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:26937/UI/DashBoard
+Error Message:Session State Expired.
+Stack Trace:   at SECURITASControl.ctlPage.OnInit(EventArgs e) in f:\Personal\SECURITAS\SECURITASControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: SECURITASShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:35:53 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:35:59 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:25237/UI/Device/DeviceList
+Error Message:Session State Expired.
+Stack Trace:   at TechnocomControl.ctlPage.OnInit(EventArgs e) in f:\Personal\Technocom\Technocom\TechnocomControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:49:10 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:49:23 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:25237/UI/Device/DeviceList
+Error Message:Session State Expired.
+Stack Trace:   at TechnocomControl.ctlPage.OnInit(EventArgs e) in f:\Personal\Technocom\Technocom\TechnocomControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:52:37 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:52:43 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:25237/UI/Device/DeviceList
+Error Message:Session State Expired.
+Stack Trace:   at TechnocomControl.ctlPage.OnInit(EventArgs e) in f:\Personal\Technocom\Technocom\TechnocomControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:56:19 AM
+
+Category: Exception
+
+Message: Message:Stored Procedure :DeviceAreaManage 
+Parameters :10Delhi
+ Inner Message:Cannot insert explicit value for identity column in table 'DeviceArea' when IDENTITY_INSERT is set to OFF.
+ Inner Stack:   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteReader(DbCommand command, CommandBehavior cmdBehavior)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   at TechnocomShared.DataAccess.DataConnection.ExecuteReader(String storedProdeureName, Object[] parametrValues) in f:\Personal\Technocom\Technocom\TechnocomShared\DataAccess\DataConnection.cs:line 168
+   at TechnocomShared.EntityLoader.EntityBase.FillObject[T](String storedProdeureName, Object[] parametrValues) in f:\Personal\Technocom\Technocom\TechnocomShared\EntityLoader\EntityBase.cs:line 225
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:57:38 AM
+
+Category: Exception
+
+Message: Message:Session State Expired.
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10/27/2020 11:57:46 AM
+
+Category: Exception
+
+Message: Error Caught in Application_Error event
+Error in: http://localhost:25237/UI/Device/DeviceAreaList
+Error Message:Session State Expired.
+Stack Trace:   at TechnocomControl.ctlPage.OnInit(EventArgs e) in f:\Personal\Technocom\Technocom\TechnocomControl\ctlPage.cs:line 132
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+Priority: 1
+
+Severity: Error
+
+Class: TechnocomShared.Logging.LogWriter
+Method: Exception
+
+----------------------------------------
